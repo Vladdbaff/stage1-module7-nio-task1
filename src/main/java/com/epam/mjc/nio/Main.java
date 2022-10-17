@@ -12,6 +12,7 @@ public class Main {
     public static void main(String[] args){
         FileReader fileReader = new FileReader();
         File file = fileReader.getFileFromResources("Profile.txt");
-        logger.log(Level.INFO, fileReader.getDataFromFile(file).toString());
+        Profile profile = fileReader.getDataFromFile(file);
+        logger.log(Level.INFO, "Profile info: name = {0}, age = {1}, email = {2}, phone = {3}", new Object[] {profile.getName(), profile.getAge(), profile.getEmail(), profile.getPhone()});
     }
 }
