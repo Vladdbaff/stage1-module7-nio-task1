@@ -26,7 +26,9 @@ public class FileReader {
         return getProfileFromFileStringData(sb.toString());
     }
 
-
+    public File getFileFromResources(String fileName) {
+        return new File(getClass().getClassLoader().getResource(fileName).getFile());
+    }
 
 
     public Profile getProfileFromFileStringData(String data) {
